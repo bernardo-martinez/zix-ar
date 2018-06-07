@@ -1,0 +1,23 @@
+<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd">
+
+	<ActionBar title="List with Models" class="action-bar"></ActionBar>
+
+	<ListView items="{{ items }}" separatorColor="transparent" itemTemplateSelector="{{ selectItemTemplate }}" tap="{{ onItemTap }}">
+		<ListView.itemTemplates>
+			<template key="post">
+				<GridLayout columns="1/4*, 1/16*, 5/8*">
+					<Image col="0" src="{{ image }}" height="90" />
+                    <Label col="1"/>
+					<Label col="2" class="" 
+						verticalAlignment="center"
+						text="{{ title }}" textWrap="true" />
+				</GridLayout>
+			</template>
+			<template key="banner">
+				<Label class="h3 text-center p-10 banner"
+					backgroundColor="lightgreen"
+					text="{{ bannerText }}" textWrap="true" />
+			</template>
+		</ListView.itemTemplates>
+	</ListView>
+</Page>
